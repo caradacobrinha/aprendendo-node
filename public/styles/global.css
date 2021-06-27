@@ -86,6 +86,12 @@ button > img,
     width: 2rem;
 }
 
+button.outlined img, 
+.button.outlined img{
+    margin-left: 1rem;
+    margin-right: 0rem;
+}
+
 button.outlined,  /* outlined funciona como se fosse uma subclasse */
 .button.outlined{
     background: var(--white);
