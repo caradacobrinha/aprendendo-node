@@ -1,0 +1,265 @@
+.content{
+    max-width: 100rem; /* O css sempre vai pegar o valor minimo dentre os dois */
+}
+
+
+/* Estilização cabeçalho */
+
+#room header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+}
+
+
+/* Estilização dos botões */
+
+#room header .buttons{
+    display: flex;
+}
+
+#room header .buttons .button:nth-child(1){
+    margin-right: .8rem;
+    padding: 1.3rem 1.6rem;
+}
+
+#room header .buttons .button:nth-child(2){
+    margin-right: .8rem;
+    padding: 1.3rem 1.6rem;
+}
+
+#room header .buttons .button:nth-child(1) img {
+    margin-right: -.4rem;
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+
+/* estilização formulario */
+
+#question-forms h2{
+    font-size: 2.8rem;
+    font-weight: 700;
+    font-family: 'Poppins', 'sans-serif';
+
+    color: var(--black);
+
+    margin-bottom: 2.4rem;
+    line-height: 4.2rem;
+}
+
+#question-forms form{
+    border: .2rem solid var(--grey-blue);
+    padding: 1.6rem;
+    border-radius: 0 .8rem .8rem .8rem;
+  
+    margin-bottom: 1.6rem;
+}
+
+#question-forms textarea{
+    resize: none;
+    width: 100%;
+
+    background: none;
+    outline: none;
+    
+    color: var(--white-dois);
+}
+
+#question-forms form textarea::placeholder{
+    color: var(--grey-blue);
+
+}
+
+#question-forms form footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#question-forms form footer > div{
+    color: var(--icons-details);
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 1.4rem;
+
+    display: flex;
+    align-items: center;
+
+}
+
+#question-forms form footer div img{
+    padding: .9rem .9rem .9rem 0rem;
+}
+
+#question-forms form footer button{
+    height: auto;
+    padding: .8rem 2.4rem;
+    line-height: 2.4rem;
+}
+
+
+/* estilização para as questions */
+
+.question-wrapper {
+    background: var(--light-blue);
+    margin-bottom: .8rem;
+
+    border-radius: 0 .8rem .8rem .8rem;
+    padding: 2.4rem; /* borda interna do componente*/
+
+}
+
+.question-wrapper .question-content {
+    display: flex;
+    align-items: center;
+}
+
+.question-wrapper .question-content .user{
+    background: var(--blue);
+    clip-path: circle();
+    padding: 1.2rem;
+}
+
+.question-wrapper .question-content p{
+    margin-left: 1.6rem;
+    word-break: break-word; /* para a palavra não quebrar o layout - importante usar em campos que recebem informações do usuario */
+
+    display: flex;
+    align-items: center;
+
+    min-height: 5.5rem;
+
+
+
+}
+
+.question-wrapper .actions{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.question-wrapper .actions > a {
+    display: flex;
+    align-items: center;
+    color: var(--grey-dark)
+    
+}
+
+.question-wrapper .actions > a + a{ /* o seletor mais vai pegar o elemento a irmão de a */
+    margin-left: 2.4rem;
+}
+
+.question-wrapper .actions > a > img{
+    margin-right: .8rem;
+}
+
+
+/* Pergunta lida */
+.question-wrapper.read{
+    background: var(--question-read);
+    
+}
+
+.question-wrapper.read .question-content .user{
+    background: var(--grey-blue);
+} 
+
+/* estilo para div quando nao tiver questoes */
+
+.no-questions{
+    margin-top: 5.2rem;
+    text-align: center;
+
+}
+
+.no-questions p{
+    margin-top: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.3rem;
+}
+
+.no-questions p + p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/* configurações mobile */
+@media (max-device-width: 500px) {
+    .question-wrapper .actions{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+
+
+
+/* DARK MODE - EM TESTE */
+
+.container {
+    border-radius: .8rem;
+
+    display: flex;
+}
+
+p{
+    color: var(--black);
+}
+
+a.button{
+    padding: 1rem;
+}
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+
+    margin-left: 1rem;
+}
+
+label::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background-color: var(--blue);
+}
+
+input:checked + label::after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 45px;
+}

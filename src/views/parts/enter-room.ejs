@@ -1,0 +1,27 @@
+<section> <!-- Essa section vai receber o conteudo do formulario (entre como participante) -->
+    <h2>Entre como participante</h2>
+    <form action="/enterroom" method="POST">
+        <label class="sr-only" for="room-id">Código da sala</label>  <!-- esse label nao aparece mas é nescessario para leitores para cego -->
+        <input name='roomId' type="number" id='room-id' placeholder="Código da sala">
+        <button>
+            <img src='images/enter-room.svg' alt='Entrar na sala'>
+            Entrar na sala
+        </button>
+    </form>
+</section>
+
+<div class="separator">  <!-- Esse separator é os dois tracinhos e o ou (apenas estetico) -->
+    <div></div>
+    <div>ou</div>
+    <div></div>
+</div>
+
+<section>  <!-- Essa section vai ter a opção de cirar sua sala -->
+    <h2>Crie sua própria sala de forma fácil</h2>
+    <a href='/create-pass' class="button outlined"> <!-- o caminho /create-pass precisa ser definido nos routes -->
+        <img src='images/users.svg' alt='Criar Sala'> 
+        Criar Sala
+    </a>
+</section> 
+
+                    

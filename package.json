@@ -1,0 +1,26 @@
+{
+  "name": "aprendendo-node",
+  "version": "1.0.0",
+  "description": "Projetão monstro pra aprender um javascript",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Nao foi informado um teste a ser feito\" && exit 1",
+    "start": "nodemon .",
+    "criar-db": "node src/db/init.js"
+  },
+  "repository": "git+https://github.com/caradacobrinha/aprendendo-node.git",
+  "keywords": [],
+  "author": "Francisco José - chicoze2 <69127821+chicoze2@users.noreply.github.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caradacobrinha/aprendendo-node/issues"
+  },
+  "homepage": "https://github.com/caradacobrinha/aprendendo-node#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  }
+}
