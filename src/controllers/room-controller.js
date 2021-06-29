@@ -62,15 +62,19 @@ module.exports = {
         const roomId = req.body.roomId
         const db = await Database()
 
-        salaExiste = await db.get(`SELECT id FROM rooms WHERE id = ${roomId}`)
+        if(roomId){
 
-        if(salaExiste){
-            res.redirect(`/room/${roomId}`)
+            salaExiste = await db.get(`SELECT id FROM rooms WHERE id = ${roomId}`)
+
+            if(salaExiste){
+                res.redirect(`/room/${roomId}`)
+            }
+            else{
+                res.render('invalidroom', {roomId : roomId})
+            }
         }
-        else{
-            res.render('invalidroom', {roomId : roomId})
-        }
-        
+
+
     }
 
  
