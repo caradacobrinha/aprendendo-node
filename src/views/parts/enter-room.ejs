@@ -2,7 +2,7 @@
     <h2>Entre como participante</h2>
     <form action="/enterroom" method="POST">
         <label class="sr-only" for="room-id">Código da sala</label>  <!-- esse label nao aparece mas é nescessario para leitores para cego -->
-        <input name='roomId' type="number" id='room-id' placeholder="Código da sala">
+        <input name='roomId' required type="number" id='room-id' placeholder="Código da sala">
         <button>
             <img src='images/enter-room.svg' alt='Entrar na sala'>
             Entrar na sala

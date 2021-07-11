@@ -18,7 +18,7 @@
 }
 
 .modal-wrapper .modal{
-    background: white;
+    background: var(--background);
     width: min(59rem, 90%);
     margin: auto; /* as margens automaticas vao colocar o objeto no centro */
 

@@ -15,7 +15,8 @@ const initialColors = {
     iconsDetails: getStyle(html, "--iconsDetails"),
     lightBlue: getStyle(html, '--light-blue'),
     greyDark: getStyle(html, '--grey-dark'),
-    questionRead: getStyle(html, '--question-read')
+    questionRead: getStyle(html, '--question-read'),
+    greyLight: getStyle(html, '--grey-light')
 }
 
 const darkMode = {
@@ -26,13 +27,13 @@ const darkMode = {
     iconsDetails: '#E5EAF1',
     lightBlue: '#204f96',
     greyDark: '#fff',
-    questionRead: '#2e3035'
+    questionRead: '#2e3035',
+    greyLight: '#363636'
 
 }
 
 const transformKey = key => 
     "--" + key.replace(/([A-Z])/, "-$1").toLowerCase()
-
 
 const changeColors = (colors) => {
     Object.keys(colors).map(key => 
@@ -40,7 +41,25 @@ const changeColors = (colors) => {
     )
 }
 
-
 checkbox.addEventListener("change", ({target}) => {
-    target.checked ? changeColors(darkMode) : changeColors(initialColors)
+
+    if(target.checked){
+        changeColors(darkMode)
+    
+        localStorage.setItem('theme', 'dark')
+    }
+    else{
+        changeColors(initialColors)
+
+        localStorage.setItem('theme', 'normal')
+    }
+
 })
+
+
+if(localStorage.getItem('theme') == 'dark'){
+    changeColors(darkMode)
+}
+else{
+    changeColors(initialColors)
+}
