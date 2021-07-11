@@ -58,8 +58,8 @@ checkbox.addEventListener("change", ({target}) => {
 
 
 if(localStorage.getItem('theme') == 'dark'){
-    changeColors(darkMode)
     checkbox.checked = true
+    changeColors(darkMode)
 }
 else{
     changeColors(initialColors)
